@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from annoying.decorators import render_to
 
-# Create your views here.
+
+@render_to('task_app/index.html')
+def index(request):
+    return {}

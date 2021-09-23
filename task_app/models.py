@@ -36,6 +36,6 @@ class Sales(models.Model):
     id = models.BigAutoField(primary_key=True)
     item = models.ForeignKey(Items, on_delete=models.CASCADE)   # товар
     price_sale = models.FloatField("Цена")
-    number = models.IntegerField("Количество")
+    number = models.PositiveIntegerField("Количество")
     dt_sale = models.DateTimeField("Дата и время покупки", auto_now_add=True, blank=True)
     seller = models.ForeignKey(Employees, on_delete=models.CASCADE)     # продавец
