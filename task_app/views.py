@@ -1,6 +1,10 @@
-from annoying.decorators import render_to
+from django.shortcuts import render
+from django.views.generic.base import View
 
 
-@render_to('task_app/index.html')
-def index(request):
-    return {}
+class HomeViews(View):
+    template_name = 'task_app/index.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
